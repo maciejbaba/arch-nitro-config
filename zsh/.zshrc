@@ -1,112 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your Oh My Zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-export SUDO_EDITOR="/usr/bin/nvim"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting docker vi-mode)
-
-# This is for the autosuggestion to work with tab
-# disabled because it is bad - disables normal autocompletion of the zsh
-# bindkey '\t' end-of-line
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch $(uname -m)"
-
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gs="git status"
 alias sus="sudo systemctl stop bluetooth.service && systemctl suspend"
 alias status="sudo systemctl status"
@@ -136,3 +28,125 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 function set-pdf() {
   mv $1 ~/pdf.js/web/compressed.tracemonkey-pldi-09.pdf
 }
+
+
+
+
+# Path to your oh-my-zsh installation.
+ZSH="$HOME/.oh-my-zsh"
+
+export DEFAULT_USER="fernando"
+export TERM="xterm-256color"
+export ZSH
+export SUDO_EDITOR="/usr/bin/nvim"
+
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE="nerdfont-complete"
+source $ZSH/themes/powerlevel9k/powerlevel9k.zsh-theme
+
+# in order to be able to accept the suggestion with ctrl + space
+bindkey '^ ' autosuggest-accept
+
+POWERLEVEL9K_FOLDER_ICON=""
+POWERLEVEL9K_HOME_SUB_ICON="$(print_icon "HOME_ICON")"
+POWERLEVEL9K_DIR_PATH_SEPARATOR=" $(print_icon "LEFT_SUBSEGMENT_SEPARATOR") "
+
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+
+POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true
+
+POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='black'
+POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='178'
+POWERLEVEL9K_NVM_BACKGROUND="238"
+POWERLEVEL9K_NVM_FOREGROUND="green"
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="blue"
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="015"
+
+POWERLEVEL9K_TIME_BACKGROUND='255'
+#POWERLEVEL9K_COMMAND_TIME_FOREGROUND='gray'
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='245'
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
+
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir dir_writable vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time time)
+POWERLEVEL9K_SHOW_CHANGESET=true
+
+HYPHEN_INSENSITIVE="true"
+COMPLETION_WAITING_DOTS="true"
+# /!\ do not use with zsh-autosuggestions
+
+plugins=(archlinux 
+	asdf 
+	bundler 
+	docker 
+	jsontools 
+	vscode 
+	web-search 
+  k
+	tig 
+	gitfast 
+	colored-man-pages 
+	colorize 
+	command-not-found 
+	cp 
+	dirhistory 
+	autojump 
+	sudo 
+	zsh-syntax-highlighting
+  zsh-autosuggestions)
+# /!\ zsh-syntax-highlighting and then zsh-autosuggestions must be at the end
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+typeset -gA ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[cursor]='bold'
+
+ZSH_HIGHLIGHT_STYLES[alias]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[function]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[command]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=green,bold'
+
+rule () {
+	print -Pn '%F{blue}'
+	local columns=$(tput cols)
+	for ((i=1; i<=columns; i++)); do
+	   printf "\u2588"
+	done
+	print -P '%f'
+}
+
+function _my_clear() {
+	echo
+	rule
+	zle clear-screen
+}
+zle -N _my_clear
+bindkey '^l' _my_clear
+
+# Ctrl-O opens zsh at the current location, and on exit, cd into ranger's last location.
+ranger-cd() {
+	tempfile=$(mktemp)
+	ranger --choosedir="$tempfile" "${@:-$(pwd)}" < $TTY
+	test -f "$tempfile" &&
+	if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+	cd -- "$(cat "$tempfile")"
+	fi
+	rm -f -- "$tempfile"
+	# hacky way of transferring over previous command and updating the screen
+	VISUAL=true zle edit-command-line
+}
+zle -N ranger-cd
+bindkey '^o' ranger-cd
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE="true"
+
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+source $ZSH/oh-my-zsh.sh

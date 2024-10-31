@@ -3,7 +3,7 @@ alias gs="git status"
 alias sus="sudo systemctl stop bluetooth.service && systemctl suspend"
 alias status="sudo systemctl status"
 alias stop="sudo systemctl stop"
-alias start"sudo systemctl start"
+alias start="sudo systemctl start"
 alias reload="sudo systemctl daemon-reload"
 alias restart="sudo systemctl restart"
 alias hetzner-anton="ssh anton@116.203.234.212"
@@ -29,8 +29,8 @@ function set-pdf() {
   mv $1 ~/pdf.js/web/compressed.tracemonkey-pldi-09.pdf
 }
 
-
-
+# In order for the nvim term to use zsh
+export SHELL="/usr/bin/zsh"
 
 # Path to your oh-my-zsh installation.
 ZSH="$HOME/.oh-my-zsh"

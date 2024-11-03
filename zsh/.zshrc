@@ -44,9 +44,6 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE="nerdfont-complete"
 source $ZSH/themes/powerlevel9k/powerlevel9k.zsh-theme
 
-# in order to be able to accept the suggestion with ctrl + space
-bindkey '^ ' autosuggest-accept
-
 POWERLEVEL9K_FOLDER_ICON=""
 POWERLEVEL9K_HOME_SUB_ICON="$(print_icon "HOME_ICON")"
 POWERLEVEL9K_DIR_PATH_SEPARATOR=" $(print_icon "LEFT_SUBSEGMENT_SEPARATOR") "
@@ -94,8 +91,12 @@ plugins=(archlinux
 	autojump 
 	sudo 
 	zsh-syntax-highlighting
+  zsh-vi-mode
   zsh-autosuggestions)
 # /!\ zsh-syntax-highlighting and then zsh-autosuggestions must be at the end
+
+# in order to be able to accept the suggestion with ctrl + space
+bindkey '^ ' autosuggest-accept
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 typeset -gA ZSH_HIGHLIGHT_STYLES

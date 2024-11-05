@@ -32,12 +32,10 @@ function set-pdf() {
 # In order for the nvim term to use zsh
 export SHELL="/usr/bin/zsh"
 
-# Path to your oh-my-zsh installation.
-ZSH="$HOME/.oh-my-zsh"
-
 export DEFAULT_USER="fernando"
 export TERM="xterm-256color"
-export ZSH
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 export SUDO_EDITOR="/usr/bin/nvim"
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -65,7 +63,7 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='245'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
 
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir dir_writable vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv root_indicator dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs command_execution_time time)
 POWERLEVEL9K_SHOW_CHANGESET=true
 
@@ -81,6 +79,7 @@ plugins=(archlinux
 	vscode 
 	web-search 
   k
+  virtualenv
 	tig 
 	gitfast 
 	colored-man-pages 
@@ -94,9 +93,6 @@ plugins=(archlinux
   zsh-vi-mode
   zsh-autosuggestions)
 # /!\ zsh-syntax-highlighting and then zsh-autosuggestions must be at the end
-
-# in order to be able to accept the suggestion with ctrl + space
-bindkey '^ ' autosuggest-accept
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 typeset -gA ZSH_HIGHLIGHT_STYLES
@@ -151,3 +147,8 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+
+# in order to be able to accept the suggestion with ctrl + space
+bindkey '^ ' autosuggest-accept
+
+source /home/genshin/.config/broot/launcher/bash/br

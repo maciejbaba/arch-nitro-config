@@ -31,7 +31,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # in order to accept suggestion with ctrl + space
 bindkey '^ ' autosuggest-accept
 
-
 alias gs="git status"
 alias sus="sudo systemctl stop bluetooth.service && systemctl suspend"
 alias status="sudo systemctl status"
@@ -40,6 +39,10 @@ alias start="sudo systemctl start"
 alias reload="sudo systemctl daemon-reload"
 alias restart="sudo systemctl restart"
 alias hetzner-anton="ssh anton@116.203.234.212"
+
+# the color auto is specified in order for the colors to work
+alias l="ls -al --color=auto"
+alias ls="ls --color=auto"
 
 function gacp() {
   git add .

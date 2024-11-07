@@ -54,3 +54,6 @@ function gacp() {
 export SHELL="/usr/bin/zsh"
 
 export SUDO_EDITOR="/usr/bin/nvim"
+
+bindkey "^P" up-line-or-history
+bindkey "^N" down-line-or-history

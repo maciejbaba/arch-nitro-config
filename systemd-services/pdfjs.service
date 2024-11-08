@@ -1,0 +1,10 @@
+[Unit]
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/genshin/scripts/run_pdfjs.sh
+User=genshin
+
+[Install]
+WantedBy=multi-user.target

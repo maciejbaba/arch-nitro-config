@@ -45,8 +45,8 @@ alias c="xclip -selection clipboard"
 alias v="xclip -o"
 
 # the color auto is specified in order for the colors to work
-alias l="ls -al --color=auto"
-alias ls="ls --color=auto"
+alias l="lsd -al"
+alias ls="lsd"
 
 function gacp() {
   git add .

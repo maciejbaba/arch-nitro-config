@@ -54,6 +54,17 @@ function gacp() {
   git push
 }
 
+function create-backup() {
+  cp ~/.zshrc ~/repos/arch-nitro-config/zsh/.zshrc
+  cp ~/.config/nvim/init.vim ~/repos/arch-nitro-config/nvchad/init.vim
+  cp ~/.config/nvim/lua/plugins.lua ~/repos/arch-nitro-config/nvchad/plugins.lua
+  cp ~/.config/nvim/lua/options.lua ~/repos/arch-nitro-config/nvchad/options.lua
+  cp ~/.config/nvim/lua/plugins/init.lua ~/repos/arch-nitro-config/nvchad/plugins/init.lua
+  cp ~/.config/nvim/lua/configs/lspconfig.lua ~/repos/arch-nitro-config/nvchad/lspconfig.lua
+  cp ~/.config/nvim/lua/configs/conform.lua ~/repos/arch-nitro-config/nvchad/conform.lua
+  cp ~/.config/i3/config ~/repos/arch-nitro-config/i3/config
+}
+
 # In order for the nvim term to use zsh
 export SHELL="/usr/bin/zsh"
 

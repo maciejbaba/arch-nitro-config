@@ -1,7 +1,7 @@
 set $mod Mod4
 
 # remove title from windows
-for_window [class=".*"] border none
+# for_window [class=".*"] border none
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -202,3 +202,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+exec --no-startup-id ~/setup-monitors.sh
+
+bindsym Print exec --no-startup-id flameshot gui

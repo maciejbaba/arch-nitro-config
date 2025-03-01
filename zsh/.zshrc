@@ -56,8 +56,7 @@ function gacp() {
 
 function create-backup() {
   cp ~/.zshrc ~/repos/arch-nitro-config/zsh/.zshrc
-  cp ~/.config/nvim/init.vim ~/repos/arch-nitro-config/nvchad/init.vim
-  cp ~/.config/nvim/lua/plugins.lua ~/repos/arch-nitro-config/nvchad/plugins.lua
+  cp ~/.config/nvim/init.lua ~/repos/arch-nitro-config/nvchad/init.vim
   cp ~/.config/nvim/lua/options.lua ~/repos/arch-nitro-config/nvchad/options.lua
   cp ~/.config/nvim/lua/plugins/init.lua ~/repos/arch-nitro-config/nvchad/plugins/init.lua
   cp ~/.config/nvim/lua/configs/lspconfig.lua ~/repos/arch-nitro-config/nvchad/lspconfig.lua

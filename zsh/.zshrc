@@ -54,6 +54,12 @@ function gacp() {
   git push
 }
 
+function push-backup() {
+  cd ~/repos/arch-nitro-config/
+  gacp "update backup"
+  cd
+}
+
 function create-backup() {
   cp ~/.zshrc ~/repos/arch-nitro-config/zsh/.zshrc
   cp ~/.config/nvim/init.lua ~/repos/arch-nitro-config/nvchad/init.vim
